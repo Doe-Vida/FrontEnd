@@ -1,16 +1,14 @@
-# front_end
+# Front end - Doe Vida
 
-A new Flutter project.
+## Folder Organizations
 
-## Getting Started
+**lib > shared** - Global classes that contains the widgets and styles of the project.
 
-This project is a starting point for a Flutter application.
+## Tips
 
-A few resources to get you started if this is your first Flutter project:
+**Override TextStyle** 
+``` dart
+TextStyleClass customTextStyle = TextStyleClass();
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+final TextStyle myHeadline1 = customTextStyle.headline1.copyWith(fontSize: 32.0);
+```
