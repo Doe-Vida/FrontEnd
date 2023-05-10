@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_icons.dart';
 import 'package:front_end/shared/themes/app_text_styles.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
+import 'package:front_end/shared/widgets/buttons/button_add.dart';
+import 'package:front_end/shared/widgets/buttons/button_default.dart';
+import 'package:front_end/shared/widgets/buttons/button_white.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,14 +30,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,28 +41,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-           AppIcons.arrowDropDown,
-           AppIcons.verified,
-           AppIcons.bellRing,
-           Text(
-              'You have pushed the button this many times:', style: AppTextStyles.boldHeader1,
-            ),
+           ButtonDefault(text: "Criar conta", onTap: (){}),
+
+           ButtonWhite(text: "Texto", onTap: (){}),
+          
             Text(
               'You have pushed the button this many times:', style: AppTextStyles.regularHeader1,
-            ),
-            Text(
-              '$_counter',
-              style: AppTextStyles.regularHeader1,
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        backgroundColor: AppColors.pinkPrimary,
-        child: AppIcons.mapMarker,
-      ),
+      floatingActionButton: ButtonAdd(onPressed: (){},)
     );
   }
 }

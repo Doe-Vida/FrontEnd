@@ -5,150 +5,128 @@ import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 
-class AppIcons
-{
-  static Iconify add = Iconify
-  (
+class AppIcons {
+  static Iconify add = Iconify(
     MaterialSymbols.add,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify alarmClock = Iconify
-  (
+  static Iconify alarmClock = Iconify(
     Mdi.alarm_clock,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify arrowBack = Iconify
-  (
+  static Iconify arrowBack = Iconify(
     MaterialSymbols.arrow_back_rounded,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify arrowDropDown = Iconify
-  (
+  static Iconify arrowDropDown = Iconify(
     Mdi.arrow_drop_down,
     size: 24,
     color: AppColors.black,
   );
-  
-  static Iconify arrowDropUp = Iconify
-  (
+
+  static Iconify arrowDropUp = Iconify(
     Mdi.arrow_drop_up,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify arrowForward = Iconify
-  (
+  static Iconify arrowForward = Iconify(
     MaterialSymbols.arrow_forward_rounded,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify bellRing = Iconify
-  (
+  static Iconify bellRing = Iconify(
     Mdi.bell_ring,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify cardsHeart = Iconify
-  (
+  static Iconify cardsHeart = Iconify(
     Mdi.cards_heart,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify cardsHeartOutline = Iconify
-  (
+  static Iconify cardsHeartOutline = Iconify(
     Mdi.cards_heart_outline,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify eye = Iconify
-  (
+  static Iconify eye = Iconify(
     Mdi.eye,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify eyeOff = Iconify
-  (
+  static Iconify eyeOff = Iconify(
     Mdi.eye_off,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify fileDocument = Iconify
-  (
+  static Iconify fileDocument = Iconify(
     Mdi.file_document_box_multiple,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify handHeart = Iconify
-  (
+  static Iconify handHeart = Iconify(
     Mdi.hand_heart,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify home = Iconify
-  (
+  static Iconify home = Iconify(
     Mdi.home,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify key = Iconify
-  (
+  static Iconify key = Iconify(
     MaterialSymbols.vpn_key_rounded,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify mail = Iconify
-  (
+  static Iconify mail = Iconify(
     MaterialSymbols.mail,
     size: 24,
     color: AppColors.black,
   );
-  
-  static Iconify mapMarker = Iconify
-  (
+
+  static Iconify mapMarker = Iconify(
     Mdi.map_marker,
     size: 24,
     color: AppColors.black,
   );
 
-  static Iconify mapSharp = Iconify
-  (
+  static Iconify mapSharp = Iconify(
     MaterialSymbols.map_sharp,
     size: 24,
     color: AppColors.black,
   );
-  
-  static Iconify personRounded = Iconify
-  (
+
+  static Iconify personRounded = Iconify(
     MaterialSymbols.person_rounded,
     size: 24,
     color: AppColors.black,
   );
-  
-  static Iconify share = Iconify
-  (
+
+  static Iconify share = Iconify(
     MaterialSymbols.share,
     size: 24,
     color: AppColors.black,
   );
-  
-  static Iconify verified = Iconify
-  (
+
+  static Iconify verified = Iconify(
     Mdi.verified,
     size: 24,
     color: AppColors.black,
