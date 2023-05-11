@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:front_end/shared/themes/app_colors.dart';
+import 'package:front_end/shared/themes/app_icons.dart';
 import 'package:front_end/shared/themes/app_text_styles.dart';
+import 'package:front_end/shared/widgets/appbars/appbar_default.dart';
 import 'package:front_end/shared/widgets/buttons/button_add.dart';
 import 'package:front_end/shared/widgets/buttons/button_default.dart';
 import 'package:front_end/shared/widgets/buttons/button_white.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -30,18 +33,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.cyan,
-        title: Text(widget.title),
-      ),
+      appBar: MyAppBar(title: "App Doe Vida", backgroundColor: AppColors.pinkPrimary),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
            ButtonDefault(text: "Criar conta", onTap: (){}),
+           ButtonDefault(text: "Henricao", onTap: (){}),
+           ButtonDefault(text: "Carol", onTap: (){}),
 
            ButtonWhite(text: "Texto", onTap: (){}),
           
