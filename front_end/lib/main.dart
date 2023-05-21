@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_text_styles.dart';
+import 'package:front_end/shared/themes/app_icons.dart';
 import 'package:front_end/shared/components/appbars/appbar_default.dart';
 import 'package:front_end/shared/components/buttons/button_add.dart';
-import 'package:front_end/shared/components/buttons/button_default.dart';
-import 'package:front_end/shared/components/buttons/button_white.dart';
+import 'package:iconify_flutter/iconify_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,27 +41,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: MyAppBar(
-            title: "App Doe Vida", backgroundColor: AppColors.pinkPrimary),
+        appBar: AppBarDefault(
+          title: "Criar conta", 
+          backgroundColor: AppColors.pinkPrimary,
+          iconLeft: AppIcons.arrowBack,
+          onPressedIconLeft: (){
+            
+          },
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ButtonDefault(text: "Criar conta", onTap: () {}),
+              /*ButtonDefault(text: "Criar conta", onTap: () {}),
               ButtonDefault(text: "Henricao", onTap: () {}),
               ButtonDefault(text: "Carol", onTap: () {}),
               ButtonWhite(text: "Texto", onTap: () {}),
               Exemplo(text: doadores.toString(), onTap: aumentar),
-              ButtonDefault(text: doadores.toString(), onTap: aumentar),
-              Text(
-                'You have pushed the button this many times:',
-                style: AppTextStyles.regularHeader1,
-              ),
+              ButtonDefault(text: doadores.toString(), onTap: aumentar),*/
+              Text(doadores.toString()),
             ],
           ),
         ),
         floatingActionButton: ButtonAdd(
-          onPressed: () {},
+          onPressed: aumentar,
         ));
   }
 }
