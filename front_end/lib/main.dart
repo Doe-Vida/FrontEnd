@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:front_end/shared/themes/app_colors.dart';
 import 'package:front_end/shared/themes/app_icons.dart';
 import 'package:front_end/shared/themes/app_text_styles.dart';
-import 'package:front_end/shared/widgets/appbars/appbar_default.dart';
-import 'package:front_end/shared/widgets/buttons/button_add.dart';
-import 'package:front_end/shared/widgets/buttons/button_default.dart';
-import 'package:front_end/shared/widgets/buttons/button_white.dart';
-
+import 'package:front_end/shared/components/appbars/appbar_default.dart';
+import 'package:front_end/shared/components/buttons/button_add.dart';
+import 'package:front_end/shared/components/buttons/button_default.dart';
+import 'package:front_end/shared/components/buttons/button_white.dart';
+import 'package:front_end/telaexemplo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-     color: AppColors.pinkPrimary,
+      color: AppColors.pinkPrimary,
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -33,28 +33,38 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int doadores = 0;
+
+  void aumentar() {
+    setState(() {
+      doadores++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MyAppBar(title: "App Doe Vida", backgroundColor: AppColors.pinkPrimary),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-           ButtonDefault(text: "Criar conta", onTap: (){}),
-           ButtonDefault(text: "Henricao", onTap: (){}),
-           ButtonDefault(text: "Carol", onTap: (){}),
-
-           ButtonWhite(text: "Texto", onTap: (){}),
-          
-            Text(
-              'You have pushed the button this many times:', style: AppTextStyles.regularHeader1,
-            ),
-          ],
+        appBar: MyAppBar(
+            title: "App Doe Vida", backgroundColor: AppColors.pinkPrimary),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ButtonDefault(text: "Criar conta", onTap: () {}),
+              ButtonDefault(text: "Henricao", onTap: () {}),
+              ButtonDefault(text: "Carol", onTap: () {}),
+              ButtonWhite(text: "Texto", onTap: () {}),
+              Exemplo(text: doadores.toString(), onTap: aumentar),
+              ButtonDefault(text: doadores.toString(), onTap: aumentar),
+              Text(
+                'You have pushed the button this many times:',
+                style: AppTextStyles.regularHeader1,
+              ),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: ButtonAdd(onPressed: (){},)
-    );
+        floatingActionButton: ButtonAdd(
+          onPressed: () {},
+        ));
   }
 }
