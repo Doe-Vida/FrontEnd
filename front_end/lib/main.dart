@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_icons.dart';
 import 'package:front_end/shared/themes/app_text_styles.dart';
 import 'package:front_end/shared/components/appbars/appbar_default.dart';
 import 'package:front_end/shared/components/buttons/button_add.dart';
 import 'package:front_end/shared/components/buttons/button_default.dart';
 import 'package:front_end/shared/components/buttons/button_white.dart';
-import 'package:front_end/telaexemplo.dart';
 
 void main() {
   runApp(const MyApp());
