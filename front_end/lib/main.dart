@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end/shared/components/cards/card_blood_type.dart';
 import 'package:front_end/shared/themes/app_colors.dart';
 import 'package:front_end/shared/themes/app_icons.dart';
 import 'package:front_end/shared/components/appbars/appbar_default.dart';
@@ -41,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
         appBar: AppBarDefault(
           title: "Criar conta", 
           backgroundColor: AppColors.pinkPrimary,
@@ -50,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
         body: Center(
+          
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -60,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Exemplo(text: doadores.toString(), onTap: aumentar),
               ButtonDefault(text: doadores.toString(), onTap: aumentar),*/
               Text(doadores.toString()),
+              const CardBloodType(bloodType: "AB+", bloodDonors: "A+, AB+", bloodRecipients: "A+, A-, O+, O-")
             ],
           ),
         ),
