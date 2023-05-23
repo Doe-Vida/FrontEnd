@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBarDefault(
           title: "Criar conta", 
           backgroundColor: AppColors.pinkPrimary,
-          iconLeft: AppIcons.arrowBack,
+          iconLeft: AppIcons.arrowBack(),
           onPressedIconLeft: (){
             
           },
