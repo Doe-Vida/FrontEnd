@@ -6,58 +6,63 @@ import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 
 class AppIcons {
-  static Iconify add = Iconify(
+  static Iconify nulo = Iconify(
     MaterialSymbols.add,
     size: 24,
     color: AppColors.black,
   );
+  static Iconify add([color = AppColors.black]) => Iconify(
+    MaterialSymbols.add,
+    size: 24,
+    color: color,
+  );
 
-  static Iconify alarmClock = Iconify(
+  static Iconify alarmClock([color = AppColors.black]) => Iconify(
     Mdi.alarm_clock,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify arrowBack = Iconify(
+  static Iconify arrowBack([color = AppColors.black]) => Iconify(
     MaterialSymbols.arrow_back_rounded,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify arrowDropDown = Iconify(
+  static Iconify arrowDropDown([color = AppColors.black]) => Iconify(
     Mdi.arrow_drop_down,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify arrowDropUp = Iconify(
+  static Iconify arrowDropUp([color = AppColors.black]) => Iconify(
     Mdi.arrow_drop_up,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify arrowForward = Iconify(
+  static Iconify arrowForward([color = AppColors.black]) => Iconify(
     MaterialSymbols.arrow_forward_rounded,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify bellRing = Iconify(
+  static Iconify bellRing([color = AppColors.black]) => Iconify(
     Mdi.bell_ring,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify cardsHeart = Iconify(
+  static Iconify cardsHeart([color = AppColors.black]) => Iconify(
     Mdi.cards_heart,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify cardsHeartOutline = Iconify(
+  static Iconify cardsHeartOutline([color = AppColors.black]) => Iconify(
     Mdi.cards_heart_outline,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
    static Iconify close = Iconify(
@@ -66,75 +71,75 @@ class AppIcons {
     color: AppColors.black,
   );
 
-  static Iconify eye = Iconify(
+  static Iconify eye([color = AppColors.black]) => Iconify(
     Mdi.eye,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify eyeOff = Iconify(
+  static Iconify eyeOff([color = AppColors.black]) => Iconify(
     Mdi.eye_off,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify fileDocument = Iconify(
+  static Iconify fileDocument([color = AppColors.black]) => Iconify(
     Mdi.file_document_box_multiple,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify handHeart = Iconify(
+  static Iconify handHeart([color = AppColors.black]) => Iconify(
     Mdi.hand_heart,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify home = Iconify(
+  static Iconify home([color = AppColors.black]) => Iconify(
     Mdi.home,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify key = Iconify(
+  static Iconify key([color = AppColors.black]) => Iconify(
     MaterialSymbols.vpn_key_rounded,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify mail = Iconify(
+  static Iconify mail([color = AppColors.black]) => Iconify(
     MaterialSymbols.mail,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify mapMarker = Iconify(
+  static Iconify mapMarker([color = AppColors.black]) => Iconify(
     Mdi.map_marker,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify mapSharp = Iconify(
+  static Iconify mapSharp([color = AppColors.black]) => Iconify(
     MaterialSymbols.map_sharp,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify personRounded = Iconify(
+  static Iconify personRounded([color = AppColors.black]) => Iconify(
     MaterialSymbols.person_rounded,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify share = Iconify(
+  static Iconify share([color = AppColors.black]) => Iconify(
     MaterialSymbols.share,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 
-  static Iconify verified = Iconify(
+  static Iconify verified([color = AppColors.black]) => Iconify(
     Mdi.verified,
     size: 24,
-    color: AppColors.black,
+    color: color,
   );
 }

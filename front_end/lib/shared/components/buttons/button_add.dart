@@ -11,7 +11,7 @@ class ButtonAdd extends StatelessWidget {
     return FloatingActionButton(
       onPressed: onPressed,
       backgroundColor: AppColors.cyan,
-      child: AppIcons.add,
+      child: AppIcons.add(),
     );
   }
 }
