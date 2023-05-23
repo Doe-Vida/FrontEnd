@@ -23,7 +23,7 @@ class AppBarDefault extends StatelessWidget implements PreferredSizeWidget{
       leading: iconLeft == null ? null : IconButton(icon: iconLeft!, onPressed: onPressedIconLeft,),
       actions: iconRight == null ? null : <Widget>[
             IconButton(onPressed: onPressedIconRight, icon: iconRight!)
-            ],
+          ],
       backgroundColor: backgroundColor ?? AppColors.white 
     );
   }

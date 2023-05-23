@@ -60,6 +60,12 @@ class AppIcons {
     color: AppColors.black,
   );
 
+   static Iconify close = Iconify(
+    MaterialSymbols.close,
+    size: 24,
+    color: AppColors.black,
+  );
+
   static Iconify eye = Iconify(
     Mdi.eye,
     size: 24,
