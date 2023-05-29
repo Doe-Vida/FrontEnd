@@ -1,6 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:front_end/shared/themes/app_icons.dart';
+import 'package:front_end/views/shared/themes/app_icons.dart';
 import 'package:intl/intl.dart';
 
 class TextBoxWidget extends StatefulWidget {
@@ -56,7 +56,7 @@ class _TextBoxWidgetState extends State<TextBoxWidget> {
           prefixIcon: widget.prefixIcon,
           suffixIcon: widget.controller.text.isEmpty 
                 ? Container(width: 0,)
-                : IconButton(icon: AppIcons.close, onPressed: () => widget.controller.clear()),
+                : IconButton(icon: AppIcons.close(), onPressed: () => widget.controller.clear()),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30)
           ),

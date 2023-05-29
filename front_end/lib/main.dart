@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/shared/components/buttons/button_default.dart';
-import 'package:front_end/shared/components/cards/card_blood_type.dart';
-import 'package:front_end/shared/components/textboxes/textbox_default.dart';
-import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_icons.dart';
-import 'package:front_end/shared/components/appbars/appbar_default.dart';
-import 'package:front_end/shared/components/buttons/button_add.dart';
+import 'package:front_end/views/shared/widgets/buttons/button_white_widget.dart';
+import 'package:front_end/views/shared/widgets/buttons/button_widget.dart';
+import 'package:front_end/views/shared/widgets/cards/card_blood_type.dart';
+import 'package:front_end/views/shared/widgets/textboxes/textbox_widget.dart';
+import 'package:front_end/views/shared/themes/app_colors.dart';
+import 'package:front_end/views/shared/themes/app_icons.dart';
+import 'package:front_end/views/shared/widgets/appbars/appbar_widget.dart';
+import 'package:front_end/views/shared/widgets/buttons/button_add_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-        appBar: AppBarDefault(
+        appBar: AppBarWidget(
           title: "Criar conta", 
           backgroundColor: AppColors.pinkPrimary,
           iconLeft: AppIcons.arrowBack(),
@@ -74,7 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   margin: const EdgeInsets.all(20),
                 ),*/
 
-                ButtonDefault(text: "Entrar", onTap: (){
+                CardBloodType(bloodType: "A", bloodDonors: "A, B", bloodRecipients: "C"),
+
+                ButtonWidget(text: "Entrar", onTap: (){
                     final form = formKey.currentState!;
 
                     if (form.validate())
@@ -92,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-        floatingActionButton: ButtonAdd(
+        floatingActionButton: ButtonAddWidget(
           onPressed: aumentar,
         ));
   }

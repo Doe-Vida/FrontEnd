@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:front_end/shared/themes/app_colors.dart';
+import 'package:front_end/views/shared/themes/app_colors.dart';
 
 class AppTextStyles {
   //Regular

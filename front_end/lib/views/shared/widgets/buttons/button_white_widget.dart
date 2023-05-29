@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_text_styles.dart';
+import 'package:front_end/views/shared/themes/app_colors.dart';
+import 'package:front_end/views/shared/themes/app_text_styles.dart';
 
-class ButtonWhite extends StatelessWidget {
+class ButtonWhiteWidget extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
-  const ButtonWhite({
+  final EdgeInsetsGeometry? margin;
+  const ButtonWhiteWidget({
     Key? key,
     required this.text, 
-    required this.onTap
-    }) : super(key: key);
+    required this.onTap,
+    this.margin
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class ButtonWhite extends StatelessWidget {
       child: Container(
         height: 35,
         width: 200,
+        margin: margin,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(30),
@@ -30,14 +33,5 @@ class ButtonWhite extends StatelessWidget {
         ),)
       )
     );
-    // return SizedBox(
-    //     height: height,
-    //     child: TextButton(
-    //         onPressed: onPressed,
-    //         child: Text(
-    //           text,
-    //           style: AppTextStyles.boldBody1
-    //               .copyWith(color: AppColors.pinkPrimary),
-    //         )));
   }
 }

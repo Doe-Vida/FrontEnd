@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_text_styles.dart';
+import 'package:front_end/views/shared/themes/app_colors.dart';
+import 'package:front_end/views/shared/themes/app_text_styles.dart';
 
-class AppBarDefault extends StatelessWidget implements PreferredSizeWidget{
+class AppBarWidget extends StatelessWidget implements PreferredSizeWidget{
   final String title;
   final Color? backgroundColor;
   final Widget? iconLeft;
   final Widget? iconRight;
   final VoidCallback? onPressedIconRight;
   final VoidCallback? onPressedIconLeft;
-  const AppBarDefault({super.key, required this.title, this.backgroundColor, this.iconLeft, this.iconRight, this.onPressedIconLeft, this.onPressedIconRight});
+  const AppBarWidget({
+    super.key, 
+    required this.title, 
+    this.backgroundColor, 
+    this.iconLeft, 
+    this.iconRight, 
+    this.onPressedIconLeft, 
+    this.onPressedIconRight
+  });
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);

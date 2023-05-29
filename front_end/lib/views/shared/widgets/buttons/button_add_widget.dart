@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_icons.dart';
+import 'package:front_end/views/shared/themes/app_colors.dart';
+import 'package:front_end/views/shared/themes/app_icons.dart';
 
-class ButtonAdd extends StatelessWidget {
+class ButtonAddWidget extends StatelessWidget {
   final VoidCallback onPressed;
-  const ButtonAdd({super.key, required this.onPressed});
+  const ButtonAddWidget({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

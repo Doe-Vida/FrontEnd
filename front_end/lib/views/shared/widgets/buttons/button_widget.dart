@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_text_styles.dart';
+import 'package:front_end/views/shared/themes/app_colors.dart';
+import 'package:front_end/views/shared/themes/app_text_styles.dart';
 
-class ButtonDefault extends StatelessWidget {
+class ButtonWidget extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
-  const ButtonDefault({super.key, required this.text, required this.onTap});
+  final EdgeInsetsGeometry? margin;
+  const ButtonWidget({
+    super.key, 
+    required this.text, 
+    required this.onTap, 
+    this.margin
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,7 @@ class ButtonDefault extends StatelessWidget {
       child: Container(
         height: 40,
         width: double.maxFinite,
-        margin: const EdgeInsets.symmetric(horizontal: 15),
+        margin: margin,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32),
           color: AppColors.pinkPrimary,

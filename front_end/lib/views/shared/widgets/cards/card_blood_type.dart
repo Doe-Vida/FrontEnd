@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/shared/themes/app_colors.dart';
-import 'package:front_end/shared/themes/app_text_styles.dart';
+import 'package:front_end/views/shared/themes/app_colors.dart';
+import 'package:front_end/views/shared/themes/app_text_styles.dart';
 
 class CardBloodType extends StatelessWidget {
   final String bloodType;
   final String bloodDonors;
   final String bloodRecipients;
-  const CardBloodType({super.key, required this.bloodType, required this.bloodDonors, required this.bloodRecipients});
+  final EdgeInsetsGeometry? margin;
+  const CardBloodType({
+    super.key, 
+    required this.bloodType, 
+    required this.bloodDonors, 
+    required this.bloodRecipients,
+    this.margin
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +21,7 @@ class CardBloodType extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10),
       width: double.maxFinite,
       height: 90,
+      margin: margin,
       decoration: BoxDecoration(
         border: Border.all(
           color: AppColors.gray400,
