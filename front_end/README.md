@@ -2,7 +2,7 @@
 
 ## Folder Organizations
 
-**lib > shared** - Global classes that contains the widgets and styles of the project.
+**lib > shared** - Global classes that contains the widgets and styles of the project..
 
 ## Tips
 
