@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/views/shared/widgets/buttons/button_white_widget.dart';
-import 'package:front_end/views/shared/widgets/buttons/button_widget.dart';
-import 'package:front_end/views/shared/widgets/cards/card_blood_type.dart';
-import 'package:front_end/views/shared/widgets/textboxes/textbox_widget.dart';
-import 'package:front_end/views/shared/themes/app_colors.dart';
-import 'package:front_end/views/shared/themes/app_icons.dart';
-import 'package:front_end/views/shared/widgets/appbars/appbar_widget.dart';
-import 'package:front_end/views/shared/widgets/buttons/button_add_widget.dart';
+import 'package:front_end/views/widgets/appbars/custom_appbar.dart';
+import 'package:front_end/views/widgets/buttons/custom_button.dart';
+import 'package:front_end/views/widgets/buttons/custom_button_add.dart';
+import 'package:front_end/views/widgets/cards/card_blood_type.dart';
+import 'package:front_end/constants/app_colors.dart';
+import 'package:front_end/constants/app_icons.dart';
+import 'package:front_end/views/widgets/textboxes/custom_textbox.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +16,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      color: AppColors.pinkPrimary,
-      home: MyHomePage(title: 'Flutter Demo Home Page ihuuu'),
+      color: AppColors.PRINK_PRIMARY,
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -47,47 +46,49 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-        appBar: AppBarWidget(
-          title: "Criar conta", 
-          backgroundColor: AppColors.pinkPrimary,
+        appBar: CustomAppBar(
+          title: "Criar conta",
+          backgroundColor: AppColors.PRINK_PRIMARY,
           iconLeft: AppIcons.arrowBack(),
         ),
         body: Center(
-          
-          child: Form( //acessa todos os métodos de validação
+          child: Form(
+            //acessa todos os métodos de validação
             key: formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TextBoxWidget(
-                  controller: emailController, 
-                  hintText: "Email", 
-                  keyboardType: TextInputType.emailAddress,  
+                CustomTextBox(
+                  controller: emailController,
+                  hintText: "Email",
+                  keyboardType: TextInputType.emailAddress,
                   margin: const EdgeInsets.all(20),
                   //prefixIcon: AppIcons.mail,
                 ),
 
-                /*TextBoxWidget(
+                /*CustomTextBox(
                   controller: dateController, 
                   hintText: "Data nascimento", 
                   keyboardType: TextInputType.emailAddress,  
                   margin: const EdgeInsets.all(20),
                 ),*/
 
-                CardBloodType(bloodType: "A", bloodDonors: "A, B", bloodRecipients: "C"),
+                CardBloodType(
+                    bloodType: "A", bloodDonors: "A, B", bloodRecipients: "C"),
 
-                ButtonWidget(text: "Entrar", onTap: (){
-                    final form = formKey.currentState!;
+                CustomButton(
+                    text: "Entrar",
+                    onTap: () {
+                      final form = formKey.currentState!;
 
-                    if (form.validate())
-                    {
+                      if (form.validate()) {
                         final email = emailController.text;
                         ScaffoldMessenger.of(context)
-                        ..removeCurrentSnackBar()
-                        ..showSnackBar(SnackBar(content: Text('Email: $email')));
-                    }
-                }),
+                          ..removeCurrentSnackBar()
+                          ..showSnackBar(
+                              SnackBar(content: Text('Email: $email')));
+                      }
+                    }),
 
                 //Text(doadores.toString()),
                 //const CardBloodType(bloodType: "AB+", bloodDonors: "A+, AB+", bloodRecipients: "A+, A-, O+, O-")
@@ -95,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-        floatingActionButton: ButtonAddWidget(
+        floatingActionButton: CustomButtonAdd(
           onPressed: aumentar,
         ));
   }

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/views/shared/themes/app_icons.dart';
-import 'package:front_end/views/shared/widgets/appbars/appbar_widget.dart';
-import 'package:front_end/views/shared/widgets/buttons/button_widget.dart';
-import 'package:front_end/views/shared/widgets/textboxes/textbox_widget.dart';
-
-import '../../shared/themes/app_colors.dart';
+import 'package:front_end/constants/app_colors.dart';
+import 'package:front_end/constants/app_icons.dart';
+import 'package:front_end/views/widgets/appbars/custom_appbar.dart';
+import 'package:front_end/views/widgets/buttons/custom_button.dart';
+import 'package:front_end/views/widgets/textboxes/custom_textbox.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -20,26 +19,26 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(
-         title: "Login", 
-         iconRight: AppIcons.arrowBack(),
-         onPressedIconRight: (){},
+      appBar: CustomAppBar(
+        title: "Login",
+        iconRight: AppIcons.arrowBack(),
+        onPressedIconRight: () {},
       ),
       body: Container(
         margin: const EdgeInsets.all(20),
         child: Column(
           children: [
             Image.asset("assets/images/doctors.png"),
-            TextBoxWidget(
-              controller: emailController, 
+            CustomTextBox(
+              controller: emailController,
               hintText: "E-mail",
-              prefixIcon: AppIcons.mail(AppColors.gray300), 
+              prefixIcon: AppIcons.mail(AppColors.GRAY300),
               keyboardType: TextInputType.emailAddress,
               margin: const EdgeInsets.only(top: 20),
-            ), 
+            ),
             //TextBox senha
             //Text esqueceu senha
-            ButtonWidget(text: "Entrar", onTap: (){})
+            CustomButton(text: "Entrar", onTap: () {})
           ],
         ),
       ),

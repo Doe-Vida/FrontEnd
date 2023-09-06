@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/views/shared/widgets/buttons/button_white_widget.dart';
-import 'package:front_end/views/shared/widgets/buttons/button_widget.dart';
+import 'package:front_end/views/widgets/buttons/custom_button.dart';
+import 'package:front_end/views/widgets/buttons/custom_button_white.dart';
 
 class InitScreen extends StatelessWidget {
   const InitScreen({super.key});
@@ -14,13 +14,13 @@ class InitScreen extends StatelessWidget {
           child: Column(
             children: [
               Image.asset("assets/images/donation.png"),
-              ButtonWidget(text: "Login", onTap: (){}),
-              ButtonWidget(
+              CustomButton(text: "Login", onTap: (){}),
+              CustomButton(
                 text: "Criar Conta", 
                 onTap: (){}, 
                 margin: const EdgeInsets.symmetric(vertical: 15),
               ),
-              ButtonWhiteWidget(text: "Seguir sem login", onTap: (){})
+              CustomButtonWhite(text: "Seguir sem login", onTap: (){})
             ]
           ),
         ),

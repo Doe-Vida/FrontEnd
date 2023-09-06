@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/views/shared/themes/app_colors.dart';
-import 'package:front_end/views/shared/themes/app_text_styles.dart';
+import 'package:front_end/constants/app_colors.dart';
+import 'package:front_end/constants/app_text_styles.dart';
 
-class ButtonWidget extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
   final EdgeInsetsGeometry? margin;
-  const ButtonWidget({
-    super.key, 
-    required this.text, 
-    required this.onTap, 
-    this.margin
-  });
+  const CustomButton(
+      {super.key, required this.text, required this.onTap, this.margin});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +19,12 @@ class ButtonWidget extends StatelessWidget {
         margin: margin,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32),
-          color: AppColors.pinkPrimary,
+          color: AppColors.PRINK_PRIMARY,
         ),
         child: Center(
           child: Text(
             text.toUpperCase(),
-            style: AppTextStyles.regularBody1.copyWith(color: AppColors.white),
+            style: AppTextStyles.regularBody1.copyWith(color: AppColors.WHITE),
           ),
         ),
       ),
@@ -46,13 +42,13 @@ class Exemplo extends InkWell {
             margin: const EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32),
-              color: AppColors.pinkPrimary,
+              color: AppColors.PRINK_PRIMARY,
             ),
             child: Center(
               child: Text(
                 text.toUpperCase(),
                 style:
-                    AppTextStyles.regularBody1.copyWith(color: AppColors.white),
+                    AppTextStyles.regularBody1.copyWith(color: AppColors.WHITE),
               ),
             ),
           ),
