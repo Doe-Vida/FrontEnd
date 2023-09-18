@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
         margin: margin,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32),
-          color: AppColors.PRINK_PRIMARY,
+          color: AppColors.PINK_PRIMARY,
         ),
         child: Center(
           child: Text(
@@ -42,7 +42,7 @@ class Exemplo extends InkWell {
             margin: const EdgeInsets.symmetric(horizontal: 15),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32),
-              color: AppColors.PRINK_PRIMARY,
+              color: AppColors.PINK_PRIMARY,
             ),
             child: Center(
               child: Text(

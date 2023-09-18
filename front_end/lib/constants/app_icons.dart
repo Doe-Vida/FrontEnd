@@ -6,7 +6,8 @@ import 'package:iconify_flutter/icons/mdi.dart';
 
 import 'package:iconify_flutter/iconify_flutter.dart';
 
-class AppIcons {
+class AppIcons 
+{
   static Iconify add([color = AppColors.BLACK, size = 24]) => Iconify(
         MaterialSymbols.add,
         size: size,
@@ -86,6 +87,12 @@ class AppIcons {
         color: color,
       );
 
+  static Iconify fileDocumentOutline([color = AppColors.BLACK, size = 24]) => Iconify(
+        Mdi.file_document_box_multiple_outline,
+        size: size,
+        color: color,
+      );
+
   static Iconify handHeart([color = AppColors.BLACK, size = 24]) => Iconify(
         Mdi.hand_heart,
         size: size,
@@ -94,6 +101,12 @@ class AppIcons {
 
   static Iconify home([color = AppColors.BLACK, size = 24]) => Iconify(
         Mdi.home,
+        size: size,
+        color: color,
+      );
+
+  static Iconify homeOutline([color = AppColors.BLACK, size = 24]) => Iconify(
+        Mdi.home_outline,
         size: size,
         color: color,
       );
@@ -112,6 +125,12 @@ class AppIcons {
 
   static Iconify mapMarker([color = AppColors.BLACK, size = 24]) => Iconify(
         Mdi.map_marker,
+        size: size,
+        color: color,
+      );
+
+  static Iconify mapMarkerOutline([color = AppColors.BLACK, size = 24]) => Iconify(
+        Mdi.map_marker_outline,
         size: size,
         color: color,
       );
@@ -136,6 +155,12 @@ class AppIcons {
 
   static Iconify verified([color = AppColors.BLACK, size = 24]) => Iconify(
         Mdi.verified,
+        size: size,
+        color: color,
+      );
+  
+  static Iconify verifiedOutline([color = AppColors.BLACK, size = 24]) => Iconify(
+        MaterialSymbols.verified_outline,
         size: size,
         color: color,
       );

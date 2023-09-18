@@ -12,8 +12,8 @@ class AppColors {
   static const Color GRAY400 = Color(0xFFECECEE);
   static const Color GRAY500 = Color(0xFFF3F3F5);
 
-  static const Color PRINK_PRIMARY = Color(0xFFF50057);
-  static const Color PRINK_SECOND = Color(0xFFEC407A);
+  static const Color PINK_PRIMARY = Color(0xFFF50057);
+  static const Color PINK_SECOND = Color(0xFFEC407A);
 
   static const Color BLUE_LINK = Color(0xFF1A44AF);
   static const Color CYAN = Color(0xFF80DEEA);

@@ -26,7 +26,7 @@ class CustomButtonWhite extends StatelessWidget {
             child: Center(
               child: Text(text,
                   style: AppTextStyles.boldBody1
-                      .copyWith(color: AppColors.PRINK_PRIMARY)),
+                      .copyWith(color: AppColors.PINK_PRIMARY)),
             )));
   }
 }

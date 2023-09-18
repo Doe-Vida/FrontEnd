@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end/views/pages/custom_navigation_bar_new.dart';
 import 'package:front_end/views/widgets/appbars/custom_appbar.dart';
 import 'package:front_end/views/widgets/buttons/custom_button.dart';
 import 'package:front_end/views/widgets/buttons/custom_button_add.dart';
@@ -15,9 +16,14 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      color: AppColors.PRINK_PRIMARY,
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    return MaterialApp(
+      title: 'Doe Vida',
+      color: AppColors.PINK_PRIMARY,
+      home: const CustomNavigationBarNew(),
+      theme: ThemeData(
+        fontFamily: 'Roboto',
+      ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -48,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: CustomAppBar(
           title: "Criar conta",
-          backgroundColor: AppColors.PRINK_PRIMARY,
+          backgroundColor: AppColors.PINK_PRIMARY,
           iconLeft: AppIcons.arrowBack(),
         ),
         body: Center(
