@@ -1,137 +1,103 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:front_end/constants/app_colors.dart';
+import 'package:front_end/constants/app_icons.dart';
+import 'package:front_end/constants/app_images.dart';
+import 'package:front_end/views/pages/auth/login/login_screen.dart';
+import 'package:front_end/views/pages/init/init_screen.dart';
+import '../dialogs/aptitude_test/first_test_aptitude_eligible.dart';
+import '../dialogs/aptitude_test/test_aptitude_result.dart';
 
-class BarNavigation extends StatefulWidget {
-  const BarNavigation({ key }) : super(key: key);
+class CustomNavigationBar extends StatefulWidget {
+  const CustomNavigationBar({super.key});
+
   @override
-  _BarNavigationState createState() => _BarNavigationState();
+  State<CustomNavigationBar> createState() => _CustomNavigationBarState();
 }
 
-class _BarNavigationState extends State<BarNavigation> {
-
-  int currentTab = 2;
-  final List<Widget> screens = [
-    Regras(),
-    SolicitacaoDoacao(),
-    Maps(),
-    Menu(),
-    CampExper()
-  ];
-
-  final PageStorageBucket bucket= PageStorageBucket();
-  Widget currentScreen = Menu();
+class _CustomNavigationBarState extends State<CustomNavigationBar> {
+  int currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageStorage(
-        child: currentScreen,
-        bucket: bucket,
-      ),
-      floatingActionButton: FloatingActionButton(
-        
-        backgroundColor: Colors.white,
-        
-        child: Icon(Icons.home,color: currentTab ==2?Colors.pinkAccent[400] : Colors.grey[300],size: 35),
-        onPressed: () {
-         setState(() {
-                      currentScreen = Menu();
-                      currentTab = 2;                                             
-                      });
-        },
-        
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
-        notchMargin:5,
-        child: Container(
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 10),
+        child: NavigationBar(
           height: 60,
-          child: Row(
-            
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  MaterialButton(
-                    minWidth: 50,
-                    onPressed: (){
-                      setState(() {
-                      currentScreen = SolicitacaoDoacao();
-                      currentTab = 0;                                             
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                          Icon(Icons.favorite, color: currentTab ==0?Colors.pinkAccent[400] : Colors.grey[300],size: 31),
-                          Text('Solicitações',style: TextStyle(color: currentTab==0? Colors.pinkAccent[400] : Colors.grey[300],fontSize: 13),)
-                      ],
-                    ),
-                    ),
-
-
-                  MaterialButton(
-                    minWidth: 50,
-                    onPressed: (){
-                      setState(() {
-                      currentScreen = Maps();
-                      currentTab = 1;                                             
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                          Icon(Icons.place, color: currentTab ==1?Colors.pinkAccent[400] : Colors.grey[300],size: 33),
-                          Text('Mapa',style: TextStyle(color: currentTab==1? Colors.pinkAccent[400] : Colors.grey[300],fontSize: 13),)
-                      ],
-                    ),
-                    ),
-
-                  Container(width:33,
-                  margin: EdgeInsets.only(right: 7,left:5),
-                  ),
-                 
-
-                  MaterialButton(
-                    minWidth: 50,
-                    onPressed: (){
-                      setState(() {
-                      currentScreen = Regras();
-                      currentTab = 3;                                             
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                          Icon(Icons.library_books, color: currentTab ==3?Colors.pinkAccent[400] : Colors.grey[300],size: 29),
-                          Text('Regras',style: TextStyle(color: currentTab==3? Colors.pinkAccent[400] : Colors.grey[300],fontSize: 13),)
-                      ],
-                    ),
-                    ),
-
-                  MaterialButton(
-                    minWidth: 50,
-                    onPressed: (){
-                      setState(() {
-                      currentScreen = CampExper();
-                      currentTab = 4;                                             
-                      });
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                          Icon(Icons.verified, color: currentTab ==4?Colors.pinkAccent[400] : Colors.grey[300],size: 29,),
-                          Text('Campanhas',style: TextStyle(color: currentTab==4? Colors.pinkAccent[400] : Colors.grey[300],fontSize: 13),)
-                      ],
-                    ),
-                    )
-                  
-                ]
+          onDestinationSelected: (int index) {
+            setState(() {
+              currentPageIndex = index;
+            });
+          },
+          indicatorColor: AppColors.PINK_SECOND.withOpacity(0.25),
+          backgroundColor: AppColors.WHITE,
+          selectedIndex: currentPageIndex,
+          destinations: <Widget>[
+            NavigationDestination(
+              selectedIcon: AppIcons.cardsHeart(),
+              icon: AppIcons.cardsHeartOutline(),
+              label: 'Doações',
+            ),
+            NavigationDestination(
+              selectedIcon: AppIcons.mapMarker(),
+              icon: AppIcons.mapMarkerOutline(),
+              label: 'Mapa',
+            ),
+            NavigationDestination(
+              selectedIcon: AppIcons.home(),
+              icon: AppIcons.homeOutline(),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              selectedIcon: AppIcons.fileDocument(),
+              icon: AppIcons.fileDocumentOutline(),
+              label: 'Regras',
+            ),
+            NavigationDestination(
+              selectedIcon: AppIcons.verified(),
+              icon: AppIcons.verifiedOutline(),
+              label: 'Relatos',
+            ),
+          ],
         ),
-                ]
       ),
-        
-    )));
+      body: <Widget>[
+        const InitScreen(),
+        const LoginScreen(),
+        Container(
+          color: Colors.pink,
+          alignment: Alignment.center,
+          child: TextButton(
+              child: const Text('Page 1'),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const TestAptitudeResultDialog(imageName: AppImages.FIT_TEST_INELIGIBLE, description: "Infelizmente você está inapto(a) e não pode realizar a doação de sangue."));
+              }),
+        ),
+        Container(
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: TextButton(
+              child: const Text('Page 2'),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const TestAptitudeResultDialog(imageName: AppImages.FIT_TEST_CONGRATULATIONS, description: "Eba! Você está apto(a) e pode realizar a doação de sangue."));
+              }),
+        ),
+       Container(
+          color: Colors.orange,
+          alignment: Alignment.center,
+          child: TextButton(
+              child: const Text('Page 3'),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const FirstTestAptitudeEligibleDialog());
+              }),
+        ),
+      ][currentPageIndex],
+    );
   }
-}*/
+}

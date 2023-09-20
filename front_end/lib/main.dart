@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front_end/views/pages/custom_navigation_bar_new.dart';
+import 'package:front_end/views/pages/custom_navigation_bar.dart';
 import 'package:front_end/views/widgets/appbars/custom_appbar.dart';
 import 'package:front_end/views/widgets/buttons/custom_button.dart';
 import 'package:front_end/views/widgets/buttons/custom_button_add.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Doe Vida',
       color: AppColors.PINK_PRIMARY,
-      home: const CustomNavigationBarNew(),
+      home: const CustomNavigationBar(),
       theme: ThemeData(
         fontFamily: 'Roboto',
       ),

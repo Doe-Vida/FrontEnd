@@ -5,6 +5,8 @@ import 'package:front_end/views/widgets/appbars/custom_appbar.dart';
 import 'package:front_end/views/widgets/buttons/custom_button.dart';
 import 'package:front_end/views/widgets/textboxes/custom_textbox.dart';
 
+import '../../../widgets/textboxes/custom_textfield.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -29,10 +31,11 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: [
             Image.asset("assets/images/doctors.png"),
-            CustomTextBox(
+            CustomTextField(
               controller: emailController,
               hintText: "E-mail",
-              prefixIcon: AppIcons.mail(AppColors.GRAY300),
+              isPassword: true,
+              prefixIcon: AppIcons.mail(AppColors.GRAY300, 10),
               keyboardType: TextInputType.emailAddress,
               margin: const EdgeInsets.only(top: 20),
             ),

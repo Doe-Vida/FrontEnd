@@ -22,7 +22,7 @@ class AppImages
 
   static const String FIT_TEST_CHECKLIST = '${_fitTest}checklist.png';
   static const String FIT_TEST_CONGRATULATIONS = '${_fitTest}congratulations.png';
-  static const String FIT_TEST_UNFIT = '${_fitTest}unfit.png';
+  static const String FIT_TEST_INELIGIBLE = '${_fitTest}ineligible.png';
 
   // donation_steps dir
   static const String _donationStep = '${_basePath}donation_steps/';

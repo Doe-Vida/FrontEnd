@@ -66,7 +66,6 @@ class _CustomTextBoxState extends State<CustomTextBox> {
             if (widget.keyboardType != null && value != null) {
               return TextValidators.validate(widget.keyboardType!, value);
             }
-
             return null;
           },
         ));
@@ -88,6 +87,8 @@ class TextValidators {
 
     //TODO: COLOCAR AS OUTRAS VALIDAÇÕES (DATA, TELEFONE), ARRUMAR ALTURA DE QUANDO APARECE O ERRO, MUDAR COR ICONE CLOSE, ADICIONAR
     //ICONES DE FACEBOOK E GOOGLE NO APPICONS
+
+    //falta fazer: exibir a emnsagem de erro, diminuir tamanho icone e adicioanr validação de telefone
 
     return null;
   }
