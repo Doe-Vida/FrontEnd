@@ -1,47 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:front_end/constants/app_colors.dart';
 import 'package:front_end/constants/app_icons.dart';
+import 'package:front_end/constants/app_images.dart';
+import 'package:front_end/constants/app_routes.dart';
 import 'package:front_end/views/widgets/appbars/custom_appbar.dart';
 import 'package:front_end/views/widgets/buttons/custom_button.dart';
-import 'package:front_end/views/widgets/textboxes/custom_textbox.dart';
 
 import '../../../widgets/textboxes/custom_textfield.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: CustomAppBar(
         title: "Login",
-        iconRight: AppIcons.arrowBack(),
-        onPressedIconRight: () {},
+        iconLeft: AppIcons.arrowBack(),
+        onPressedIconLeft: () => Navigator.pop(context),
       ),
       body: Container(
         margin: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Image.asset("assets/images/doctors.png"),
+            Image.asset(AppImages.DOCTORS, height: screenSize.height * 0.4,),
             CustomTextField(
               controller: emailController,
               hintText: "E-mail",
               isPassword: true,
-              prefixIcon: AppIcons.mail(AppColors.GRAY300, 10),
+              prefixIcon: AppIcons.mail(AppColors.GRAY300, 20),
               keyboardType: TextInputType.emailAddress,
-              margin: const EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.symmetric(vertical: 20),
             ),
             //TextBox senha
             //Text esqueceu senha
-            CustomButton(text: "Entrar", onTap: () {})
+            CustomButton(
+              text: "Entrar", 
+              onTap: () => Navigator.pushNamed(context, AppRoutes.navigationBar)
+            )
           ],
         ),
       ),

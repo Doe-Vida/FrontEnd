@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:front_end/constants/app_colors.dart';
 import 'package:front_end/constants/app_icons.dart';
 import 'package:front_end/constants/app_images.dart';
-import 'package:front_end/views/pages/auth/login/login_screen.dart';
-import 'package:front_end/views/pages/init/init_screen.dart';
+import 'package:front_end/views/pages/auth/login/login_page.dart';
+import 'package:front_end/views/pages/home/homePage.dart';
+import 'package:front_end/views/pages/init/init_page.dart';
 import '../dialogs/aptitude_test/first_test_aptitude_eligible.dart';
 import '../dialogs/aptitude_test/test_aptitude_result.dart';
 
@@ -15,7 +16,7 @@ class CustomNavigationBar extends StatefulWidget {
 }
 
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
-  int currentPageIndex = 0;
+  int currentPageIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +63,8 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         ),
       ),
       body: <Widget>[
-        const InitScreen(),
-        const LoginScreen(),
         Container(
-          color: Colors.pink,
+          color: Colors.blueGrey,
           alignment: Alignment.center,
           child: TextButton(
               child: const Text('Page 1'),
@@ -76,10 +75,22 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
               }),
         ),
         Container(
-          color: Colors.yellow,
+          color: Colors.pink,
           alignment: Alignment.center,
           child: TextButton(
               child: const Text('Page 2'),
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const TestAptitudeResultDialog(imageName: AppImages.FIT_TEST_INELIGIBLE, description: "Infelizmente você está inapto(a) e não pode realizar a doação de sangue."));
+              }),
+        ),
+        const HomePage(),
+        Container(
+          color: Colors.yellow,
+          alignment: Alignment.center,
+          child: TextButton(
+              child: const Text('Page 3'),
               onPressed: () {
                 showDialog(
                     context: context,
@@ -90,7 +101,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           color: Colors.orange,
           alignment: Alignment.center,
           child: TextButton(
-              child: const Text('Page 3'),
+              child: const Text('Page 4'),
               onPressed: () {
                 showDialog(
                     context: context,

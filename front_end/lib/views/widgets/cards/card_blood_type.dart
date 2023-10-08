@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front_end/constants/app_images.dart';
 import 'package:front_end/constants/app_text_styles.dart';
 import 'package:front_end/constants/app_colors.dart';
 
@@ -29,7 +30,7 @@ class CardBloodType extends StatelessWidget {
           Stack(
             alignment: Alignment.center,
             children: [
-              Image.asset("assets/images/pink_heart.png"),
+              Image.asset(AppImages.PINK_HEART),
               Text(
                 bloodType,
                 style:
