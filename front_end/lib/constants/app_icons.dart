@@ -69,6 +69,12 @@ class AppIcons
         color: color,
       );
 
+  static Iconify documentSign([color = AppColors.BLACK, size = 24]) => Iconify(
+        Mdi.document_sign,
+        size: size,
+        color: color,
+      );
+
   static Iconify eye([color = AppColors.BLACK, size = 24]) => Iconify(
         Mdi.eye,
         size: size,
@@ -142,7 +148,7 @@ class AppIcons
       );
 
   static Iconify personRounded([color = AppColors.BLACK, size = 24]) => Iconify(
-        MaterialSymbols.person_rounded,
+        Mdi.person_edit,
         size: size,
         color: color,
       );
@@ -161,6 +167,12 @@ class AppIcons
   
   static Iconify verifiedOutline([color = AppColors.BLACK, size = 24]) => Iconify(
         MaterialSymbols.verified_outline,
+        size: size,
+        color: color,
+      );
+  
+  static Iconify test([color = AppColors.BLACK, size = 24]) => Iconify(
+        MaterialSymbols.follow_the_signs,
         size: size,
         color: color,
       );

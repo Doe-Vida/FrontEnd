@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRoutes.controller,
-      initialRoute: AppRoutes.initPage,
+      initialRoute: AppRoutes.navigationBar,
     );
   }
 }

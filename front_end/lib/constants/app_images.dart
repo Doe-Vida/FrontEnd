@@ -9,6 +9,7 @@ class AppImages
   static const String FORGOT_PASSWORD = '${_basePath}forgot_password.png';
   static const String PINK_HEART = '${_basePath}pink_heart.png';
   static const String WHITE_HEART = '${_basePath}white_heart.png';
+  static const String USER_WITHOUT_IMAGE = '${_basePath}user_without_image.png';
 
   // frases dir
   static const String _frases = '${_basePath}frases/';
