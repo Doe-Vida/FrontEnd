@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:front_end/constants/app_colors.dart';
 import 'package:front_end/constants/app_images.dart';
+import 'package:front_end/constants/app_routes.dart';
 import 'package:front_end/constants/app_text_styles.dart';
 import 'package:front_end/views/widgets/appbars/custom_appbar.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
@@ -169,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                             ButtonHome(
                                 text: "Passo a passo",
                                 icon: AppIcons.test(AppColors.GRAY25, 70),
-                                onTap: () {})
+                                onTap: () => Navigator.pushNamed(context, AppRoutes.stepsPage))
                           ],
                         ),
 
@@ -246,33 +247,36 @@ class ButtonHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding:
-          const EdgeInsetsDirectional.symmetric(vertical: 20, horizontal: 10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.GRAY400),
-        color: AppColors.WHITE,
-        boxShadow: const [
-          BoxShadow(
-              color: AppColors.GRAY400,
-              blurRadius: 3,
-              offset: Offset(5, 6) // changes position of shadow
-              ),
-        ],
-      ),
-      child: Column(
-        children: [
-          icon,
-          Container(
-            height: 10,
-          ),
-          Text(
-            text,
-            style:
-                AppTextStyles.regularHeader3.copyWith(color: AppColors.GRAY25),
-          )
-        ],
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding:
+            const EdgeInsetsDirectional.symmetric(vertical: 20, horizontal: 10),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: AppColors.GRAY400),
+          color: AppColors.WHITE,
+          boxShadow: const [
+            BoxShadow(
+                color: AppColors.GRAY400,
+                blurRadius: 3,
+                offset: Offset(5, 6) // changes position of shadow
+                ),
+          ],
+        ),
+        child: Column(
+          children: [
+            icon,
+            Container(
+              height: 10,
+            ),
+            Text(
+              text,
+              style:
+                  AppTextStyles.regularHeader3.copyWith(color: AppColors.GRAY25),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front_end/constants/app_colors.dart';
 import 'package:front_end/constants/app_icons.dart';
 import 'package:front_end/constants/app_images.dart';
-import 'package:front_end/views/pages/auth/login/login_page.dart';
-import 'package:front_end/views/pages/home/homePage.dart';
-import 'package:front_end/views/pages/init/init_page.dart';
+import 'package:front_end/views/pages/home/home_page.dart';
 import '../dialogs/aptitude_test/first_test_aptitude_eligible.dart';
 import '../dialogs/aptitude_test/test_aptitude_result.dart';
 
