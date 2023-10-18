@@ -3,11 +3,13 @@ import 'package:front_end/constants/app_colors.dart';
 import 'package:front_end/constants/app_images.dart';
 import 'package:front_end/constants/app_routes.dart';
 import 'package:front_end/constants/app_text_styles.dart';
+import 'package:front_end/models/login.dart';
 import 'package:front_end/views/widgets/appbars/custom_appbar.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../../../constants/app_icons.dart';
+import '../../../services/base_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,11 +27,15 @@ class _HomePageState extends State<HomePage> {
   String lastDonation = DateFormat('dd/MM/yyyy').format(DateTime.now());
   String bloodType = "O+";
 
+  var carol = LoginModel(username: "miguxo@gmail.com", password: "secreta");
+
   final List<String> images = [
     AppImages.FRASES_DONATE_BLOOD_LIFE,
     AppImages.FRASES_DONATE_IS_GOOD,
     AppImages.FRASES_CONVEY_LOVE,
   ];
+
+  final LoginService login = LoginService();
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +172,11 @@ class _HomePageState extends State<HomePage> {
                                 text: "Teste aptidão",
                                 icon:
                                     AppIcons.documentSign(AppColors.GRAY25, 70),
-                                onTap: () {}),
+                                onTap: () {
+                                  //AQUIII
+
+                                  var test = login.login(carol);
+                                }),
                             ButtonHome(
                                 text: "Passo a passo",
                                 icon: AppIcons.test(AppColors.GRAY25, 70),

@@ -28,43 +28,75 @@ class CustomTextField extends StatefulWidget {
 
 class _CustomTextFieldState extends State<CustomTextField> {
   @override
+  void initState() {
+    super.initState();
+
+    widget.controller.addListener(onListen);
+  }
+
+  @override
+  void dispose() {
+    widget.controller.removeListener(onListen);
+
+    super.dispose();
+  }
+
+  void onListen() => setState(() {});
+
+  var hidePassword = true;
+  void _switch() {
+    setState(() {
+      hidePassword = !hidePassword;
+      print(widget.controller.text.isEmpty);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     var isPassword = widget.isPassword ?? false;
-    var hidePassword = true;
+    StatelessWidget getIcon() {
+      if (isPassword) {
+        return Container(
+          height: 20,
+          width: 50,
+          child: GestureDetector(
+            child: hidePassword ? AppIcons.eye() : AppIcons.eyeOff(),
+            onTap: () {
+              _switch();
+            },
+          ),
+        );
+      } else {
+        return IconButton(
+            icon: AppIcons.close(), onPressed: () => widget.controller.clear());
+      }
+    }
+
     return Container(
         key: widget.key,
         width: double.maxFinite,
-        height: 45,
         margin: widget.margin,
         child: TextFormField(
-          obscureText: isPassword? hidePassword: false,
+          obscureText: isPassword ? hidePassword : false,
           controller: widget.controller,
           keyboardType: widget.keyboardType ?? TextInputType.none,
           decoration: InputDecoration(
-            hintText: widget.hintText,
-            prefixIcon: widget.prefixIcon,
-            suffixIcon: isPassword
-                ? GestureDetector(    
-                          child: hidePassword? AppIcons.eye() : AppIcons.eyeOff(),
-                          onTap: (){
-                            setState((){
-                              hidePassword = !hidePassword;
-                            }
-                            );
-                          },)  
-                
-                : (widget.controller.text.isEmpty
-                    ? Container(
-                        width: 0,
-                      )
-                    : IconButton(
-                        icon: AppIcons.close(),
-                        onPressed: () => widget.controller.clear())),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-            errorMaxLines: 1
-          ),
+              contentPadding: const EdgeInsetsDirectional.all(10),
+              hintText: widget.hintText,
+              prefixIcon: widget.prefixIcon,
+              suffixIcon: widget.controller.text.isEmpty
+                  ? Container(
+                      width: 0,
+                    )
+                  : getIcon(),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+              errorMaxLines: 1),
           validator: (value) {
-            if (widget.keyboardType != null && value != null) {
+            if (value == null || value.isEmpty) {
+              return "please enter some text";
+            }
+            if (widget.keyboardType != null) {
               return TextValidators.validate(widget.keyboardType!, value);
             }
             return null;

@@ -4,7 +4,7 @@ import '../models/user.dart';
 import 'package:http/http.dart' as http;
 
 class UserService {
-  String uri = 'https://doevida.onrender.com/users/usuario';
+  String uri = 'https://doevida.onrender.com/users';
   late UserModel userModel;
 
   //Future<UserModel> getUser(String email) async {
@@ -16,7 +16,7 @@ class UserService {
       final headers = <String, String>
       {
         'Content-Type': 'application/json',
-        //'Authorization': 'Bearer $openAIAPIKEY',
+        'Authorization': 'Bearer bearearToken',
       };
 
       final body = jsonEncode
@@ -40,12 +40,12 @@ class UserService {
       {
         String content =
             jsonDecode(response.body)['choices'][0]['message']['content'];
-
       }
 
       return '';
 
-    } catch (e) 
+    } 
+    catch (e) 
     {
       print(e.toString());
       return '';
